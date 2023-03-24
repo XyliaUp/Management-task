@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4306DC21-AB3C-468B-88DD-EA58862D708A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TMS</RootNamespace>
+    <AssemblyName>TMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cute_Vehicle_Volkswagen_128px_507480_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Impinj.OctaneSdk, Version=2.0.2.240, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Octane SDK\Impinj.OctaneSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="LLRP, Version=10.18.1.5, Culture=neutral, PublicKeyToken=450cec67a1cde3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Octane SDK\LLRP.dll</HintPath>
+    </Reference>
+    <Reference Include="LLRP.Impinj, Version=10.18.1.5, Culture=neutral, PublicKeyToken=450cec67a1cde3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Octane SDK\LLRP.Impinj.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="suc.calc.distance">
+      <HintPath>..\..\baidu-map-api-master\suc.calc.distance\bin\Debug\suc.calc.distance.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomPages\InfoManagement\Custom\AddCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Custom\AddCustom.Designer.cs">
+      <DependentUpon>AddCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Custom\CustomList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Custom\CustomList.Designer.cs">
+      <DependentUpon>CustomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Custom\ModifyCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Custom\ModifyCustom.Designer.cs">
+      <DependentUpon>ModifyCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\MainPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\AddDriver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\AddDriver.Designer.cs">
+      <DependentUpon>AddDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\ModifyDriver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\ModifyDriver.Designer.cs">
+      <DependentUpon>ModifyDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\DriverList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Driver\DriverList.Designer.cs">
+      <DependentUpon>DriverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\ModifyVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\ModifyVehicle.Designer.cs">
+      <DependentUpon>ModifyVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\AddVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\AddVehicle.Designer.cs">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\VehicleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\InfoManagement\Vehicle\VehicleList.Designer.cs">
+      <DependentUpon>VehicleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\Dispatch\AddDispatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\Dispatch\AddDispatch.Designer.cs">
+      <DependentUpon>AddDispatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\ExploreRoute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\ExploreRoute.Designer.cs">
+      <DependentUpon>ExploreRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\Track.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\OrderManagement\Track.Designer.cs">
+      <DependentUpon>Track.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapView\Map.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MapView\Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses\Driver.cs" />
+    <Compile Include="DataClasses\Vehicle.cs" />
+    <Compile Include="MapView\MapFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapView\MapFrm.Designer.cs">
+      <DependentUpon>MapFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapView\MapHelper.cs" />
+    <Compile Include="MapView\MapRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapView\MapRoute.Designer.cs">
+      <DependentUpon>MapRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Common.cs" />
+    <Compile Include="Util\ErrorCode\Common.cs" />
+    <Compile Include="Util\ErrorCode\Entity.cs" />
+    <Compile Include="CustomPages\UserManagement\AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\DeactivateUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\DeactivateUser.Designer.cs">
+      <DependentUpon>DeactivateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\My\MyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\My\MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\UpdateMyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\UpdateMyAccount.Designer.cs">
+      <DependentUpon>UpdateMyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\UpdateUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\UpdateUser.Designer.cs">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomPages\UserManagement\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\DataAccess.cs" />
+    <Compile Include="DAT\DataAccessXml.cs" />
+    <Compile Include="BasicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasicForm.Designer.cs">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LTS\LTSBase.cs" />
+    <Compile Include="LTS\LTSDC.cs" />
+    <Compile Include="Properties\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\PDF.cs" />
+    <Compile Include="Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\OkBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Controls\OkBtn.Designer.cs">
+      <DependentUpon>OkBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Extension\Common.cs" />
+    <EmbeddedResource Include="CustomPages\InfoManagement\Custom\AddCustom.resx">
+      <DependentUpon>AddCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Custom\CustomList.resx">
+      <DependentUpon>CustomList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Custom\ModifyCustom.resx">
+      <DependentUpon>ModifyCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Driver\AddDriver.resx">
+      <DependentUpon>AddDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Driver\ModifyDriver.resx">
+      <DependentUpon>ModifyDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Driver\DriverList.resx">
+      <DependentUpon>DriverList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Vehicle\ModifyVehicle.resx">
+      <DependentUpon>ModifyVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Vehicle\AddVehicle.resx">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\InfoManagement\Vehicle\VehicleList.resx">
+      <DependentUpon>VehicleList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\OrderManagement\Dispatch\AddDispatch.resx">
+      <DependentUpon>AddDispatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\OrderManagement\ExploreRoute.resx">
+      <DependentUpon>ExploreRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\OrderManagement\Track.resx">
+      <DependentUpon>Track.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapView\Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\DeactivateUser.resx">
+      <DependentUpon>DeactivateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\My\MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\UpdateMyAccount.resx">
+      <DependentUpon>UpdateMyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\UpdateUser.resx">
+      <DependentUpon>UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPages\UserManagement\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicForm.resx">
+      <DependentUpon>BasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapView\MapFrm.resx">
+      <DependentUpon>MapFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapView\MapRoute.resx">
+      <DependentUpon>MapRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Controls\OkBtn.resx">
+      <DependentUpon>OkBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LTS\LTSGenerator.bat" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cute_Vehicle_Volkswagen_128px_507480_easyicon.net.ico" />
+    <Content Include="itextsharp.dll" />
+    <Content Include="itextsharp.pdfa.dll" />
+    <Content Include="Octane SDK\Impinj.OctaneSdk.dll" />
+    <Content Include="Octane SDK\LLRP.dll" />
+    <Content Include="Octane SDK\LLRP.Impinj.dll" />
+    <None Include="Resources\ok-like-hand-sign.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\play-button %281%292.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\play-button %281%29.png" />
+    <None Include="Resources\play-button.png" />
+    <None Include="Resources\icons8-RFID Signal-64SMALL.png" />
+    <None Include="Resources\icons8-RFID Signal-64.png" />
+    <None Include="Resources\trolley.png" />
+    <None Include="Resources\cancel-music.png" />
+    <None Include="Resources\icons8-RFID Signal Filled-50.png" />
+    <None Include="Resources\rubbish-bin %281%29.png" />
+    <None Include="Resources\rubbish-bin.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\reply %281%29.png" />
+    <None Include="Resources\reply.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\user-account-box.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\settings-gears.png" />
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\sign-out-option.png" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\ok-appproval-acceptance %281%29.png" />
+    <None Include="Resources\ok-appproval-acceptance.png" />
+    <None Include="Resources\Synertech-RFID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
